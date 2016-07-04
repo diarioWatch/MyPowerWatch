@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyPowerWatch</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="Welcome_HowAreYou">Welcome to MyPowerWatch How are you feeling today?</string>
+    <string name="Question2_TeacherFeeling">How is your teacher feeling?</string>
+    <string name="Question3_BodyFeeling">How is your body feeling?</string>
+    <string name="Question4_StressFeeling">How much stress do you feel?</string>
+</resources>
