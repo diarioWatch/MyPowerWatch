@@ -5,7 +5,7 @@ import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.BoxInsetLayout;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -17,13 +17,13 @@ public class MainActivity extends WearableActivity {
     private static final SimpleDateFormat AMBIENT_DATE_FORMAT =
             new SimpleDateFormat("HH:mm", Locale.US);
 
-    private RelativeLayout mContainerView;
+    private BoxInsetLayout mContainerView;
     private TextView mTextView;
     private TextView mClockView;
-    private Button mButton1;
-    private Button mButton2;
-    private Button mButton3;
-    private Button mButton4;
+    private ImageButton mButton1;
+    private ImageButton mButton2;
+    private ImageButton mButton3;
+    private ImageButton mButton4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +31,13 @@ public class MainActivity extends WearableActivity {
         setContentView(R.layout.activity_main);
         setAmbientEnabled();
 
-        mContainerView = (RelativeLayout) findViewById(R.id.container);
+        mContainerView = (BoxInsetLayout) findViewById(R.id.container);
         mTextView = (TextView) findViewById(R.id.text);
         mClockView = (TextView) findViewById(R.id.clock);
-        mButton1 = (Button) findViewById(R.id.button1);
-        mButton2 = (Button) findViewById(R.id.button2);
-        mButton3 = (Button) findViewById(R.id.button3);
-        mButton4 = (Button) findViewById(R.id.button4);
+        mButton1 = (ImageButton) findViewById(R.id.button1);
+        mButton2 = (ImageButton) findViewById(R.id.button2);
+        mButton3 = (ImageButton) findViewById(R.id.button3);
+        mButton4 = (ImageButton) findViewById(R.id.button4);
     }
 
     public void recordData(View view) {
@@ -48,17 +48,17 @@ public class MainActivity extends WearableActivity {
         }
         else if (mTextView.getText().equals(getText(R.string.Question2_TeacherFeeling))) {
             mTextView.setText(getApplicationContext().getText(R.string.Question3_BodyFeeling));
-            mButton1.setText("Tired");
-            mButton2.setText("Awake");
-            mButton3.setText("ToRun");
-            mButton4.setText("ToFlip");
+            //mButton1.setText("Tired");
+            //mButton2.setText("Awake");
+            //mButton3.setText("ToRun");
+            //mButton4.setText("ToFlip");
         }
         else if (mTextView.getText().equals(getText(R.string.Question3_BodyFeeling))) {
             mTextView.setText(getApplicationContext().getText(R.string.Question4_StressFeeling));
-            mButton1.setText("relaxed");
-            mButton2.setText("Tense");
-            mButton3.setText("Stressed");
-            mButton4.setText("strsOut");
+            //mButton1.setText("relaxed");
+            //mButton2.setText("Tense");
+            //mButton3.setText("Stressed");
+            //mButton4.setText("strsOut");
         }
 
     }
