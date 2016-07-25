@@ -29,7 +29,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Welcome_HowAreYou" />
+            android:text="@string/Question1_HowAreYou" />
 
         <ImageButton
             android:id="@+id/button1"
@@ -38,7 +38,7 @@
             android:layout_height="50dp"
             android:layout_gravity="left|center_vertical"
             android:src="@drawable/happy"
-            android:onClick="recordData"
+            android:onClick="questionAnswer1"
              />
 
         <ImageButton
@@ -47,7 +47,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/angry"
-            android:onClick="recordData"
+            android:onClick="questionAnswer2"
             android:layout_gravity="right|center_vertical" />
 
         <ImageButton
@@ -56,7 +56,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/sad"
-            android:onClick="recordData"
+            android:onClick="questionAnswer3"
             android:layout_gravity="left|bottom" />
 
         <ImageButton
@@ -65,7 +65,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/worried"
-            android:onClick="recordData"
+            android:onClick="questionAnswer4"
             android:layout_gravity="right|bottom" />
 
     </FrameLayout>

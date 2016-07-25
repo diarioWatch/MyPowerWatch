@@ -11,6 +11,11 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.lang.Integer;
+
+import java.util.List;
+import java.util.ArrayList;
+//Read more: http://mrbool.com/making-a-jtable-in-swing-using-java/24918#ixzz4E3El0tXX
 
 public class MainActivity extends WearableActivity {
 
@@ -24,6 +29,19 @@ public class MainActivity extends WearableActivity {
     private ImageButton mButton2;
     private ImageButton mButton3;
     private ImageButton mButton4;
+
+    String[] columnNames = {"QuestionID",
+            "Asked Time",
+            "Answered Time",
+            "Answer"};
+
+
+    List<Object> answerList = new ArrayList<Object>();
+
+    //Object[][] data = {};
+    //JTable answerTable = new JTable(data, columnNames);
+    //JTable answerTable = new JTable(new DefaultTableModel(new Object[]
+    //        {"QuestionID", "Asked Time", "Answered Time", "Answer"}));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +58,61 @@ public class MainActivity extends WearableActivity {
         mButton4 = (ImageButton) findViewById(R.id.button4);
     }
 
-    public void recordData(View view) {
+
+    public void questionAnswer1(View view) {
         //mButtonGood.setVisibility(View.GONE);
         //mTextView.setText("@string/Question2_TeacherFeeling");
-        if(mTextView.getText().equals(getText(R.string.Welcome_HowAreYou))) {
+        recordData(1);
+        questionChange();
+    }
+
+    public void questionAnswer2(View view) {
+        //mButtonGood.setVisibility(View.GONE);
+        //mTextView.setText("@string/Question2_TeacherFeeling");
+        recordData(2);
+        questionChange();
+    }
+
+    public void questionAnswer3(View view) {
+        //mButtonGood.setVisibility(View.GONE);
+        //mTextView.setText("@string/Question2_TeacherFeeling");
+        recordData(3);
+        questionChange();
+    }
+
+    public void questionAnswer4(View view) {
+        //mButtonGood.setVisibility(View.GONE);
+        //mTextView.setText("@string/Question2_TeacherFeeling");
+        recordData(4);
+        questionChange();
+    }
+
+    public void recordData(int answer) {
+        if(mTextView.getText().equals(getText(R.string.Question1_HowAreYou))) {
+            //DefaultTableModel model = (DefaultTableModel) answerTable.getModel();
+            Object[] newData = new Object[]{new Integer(1), new Integer(111),new Integer(222),new Integer(answer)};
+            answerList.add(newData);
+        }
+        else if (mTextView.getText().equals(getText(R.string.Question2_TeacherFeeling))) {
+            //DefaultTableModel model = (DefaultTableModel) answerTable.getModel();
+            Object[] newData = new Object[]{new Integer(2), new Integer(111),new Integer(222),new Integer(answer)};
+            answerList.add(newData);
+        }
+        else if (mTextView.getText().equals(getText(R.string.Question3_BodyFeeling))) {
+            //DefaultTableModel model = (DefaultTableModel) answerTable.getModel();
+            Object[] newData = new Object[]{new Integer(3), new Integer(111),new Integer(222),new Integer(answer)};
+            answerList.add(newData);
+        }
+        else if (mTextView.getText().equals(getText(R.string.Question4_StressFeeling))) {
+            //DefaultTableModel model = (DefaultTableModel) answerTable.getModel();
+            Object[] newData = new Object[]{new Integer(4), new Integer(111),new Integer(222),new Integer(answer)};
+            answerList.add(newData);
+        }
+
+    }
+    public void questionChange(){
+
+        if(mTextView.getText().equals(getText(R.string.Question1_HowAreYou))) {
             mTextView.setText(getApplicationContext().getText(R.string.Question2_TeacherFeeling));
         }
         else if (mTextView.getText().equals(getText(R.string.Question2_TeacherFeeling))) {
